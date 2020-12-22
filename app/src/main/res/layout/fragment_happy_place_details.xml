@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="small.app.happyplaces.model.HappyPlaceModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.HappyPlaceDetailsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/add_screen_image_placeholder" />
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{model.descriptor}"
+                app:layout_constraintBottom_toTopOf="@id/tv_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_image"
+
+                tools:text="Description" />
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{model.location}"
+                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_description"
+                tools:text="Location" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_location"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>
